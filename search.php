@@ -27,8 +27,12 @@
 <br>
 
 <div class="container-fluid">
-  <h3>php 사이트</h3>
-
+  <h3>검색하기</h3>
+  <form class="form-inline" action="/action_page.php" method="post">
+    <label for="keyword">검색어:</label>
+    <input type="text" class="form-control" id="keyword" placeholder="검색어를 입력" name="keyword">
+    <button type="submit" class="btn btn-primary">검색</button>
+  </form>
 </div>
 
 </body>

@@ -1,6 +1,5 @@
-
-# Created by https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode
-# Edit at https://www.toptal.com/developers/gitignore?templates=windows,visualstudiocode
+# 내가 제거할 파일
+db.php
 
 ### VisualStudioCode ###
 .vscode/*

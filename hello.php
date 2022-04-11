@@ -31,9 +31,9 @@
   <?php
     //echo "Hello World";
     for($i=1; $i<=10; $i=$i+1)
-	{
-		echo $i."Hello World <br>";
-	}
+    {
+      echo $i."Hello World <br>";
+    }
   ?>
   <!-- Hello World<br>
   Hello World<br>
