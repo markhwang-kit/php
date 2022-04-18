@@ -1,6 +1,15 @@
 <?php
     require 'dbconfig.php';
 
+    // dbconfig.php 파일 내용
+    // function dbconn() {
+    //     $host = "localhost";
+    //     $user = "";
+    //     $pw = "";
+    //     $dbName = "";
+    //     return new mysqli($host, $user, $pw, $dbName);
+    // }
+
     // $keyword = $_GET["keyword"];   // 테스트
     
     function insert_keyword($keyword) {
