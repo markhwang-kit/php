@@ -1,5 +1,5 @@
 # 내가 제거할 파일
-db.php
+dbconfig.php
 
 ### VisualStudioCode ###
 .vscode/*

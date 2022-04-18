@@ -10,21 +10,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-
-<nav class="navbar navbar-expand-sm bg-light">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="/">메인</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/hello.php">헬로월드</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/search.php">검색</a>
-    </li>
-  </ul>
-</nav>
-<br>
+<?php
+include 'menu.php';
+?>
 
 <div class="container-fluid">
   <h3>php 사이트</h3>
