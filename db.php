@@ -24,9 +24,25 @@
         ON DUPLICATE KEY UPDATE cnt = cnt + 1";
         $result = mysqli_query($conn, $sql);
         
-        if($result) { echo "insert success!"; }
-        else { echo "failure"; }
+        // if($result) { echo "insert success!"; }
+        // else { echo "failure"; }
 
+        mysqli_close($conn);
+    }
+
+    function select_keyword() {
+        $conn = dbconn();  // db 연결
+        /* DB 연결 확인 */
+        if($conn){ echo "Connection established"."<br>"; }
+        else{ die( 'Could not connect: ' . mysqli_error($conn) ); }
+        
+        /* SELECT 예제 */
+        $sql = "SELECT * FROM keyword";
+        $result = mysqli_query($conn, $sql);
+        while($row = mysqli_fetch_array($result)){
+            echo $row['keyword']."<br>";
+        }
+        
         mysqli_close($conn);
     }
 
