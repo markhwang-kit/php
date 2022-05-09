@@ -31,6 +31,7 @@
     }
 
     function select_keyword() {
+        $retlist = array();  // 디비에 리스트를 전달
         $conn = dbconn();  // db 연결
         /* DB 연결 확인 */
         // if($conn){ echo "Connection established"."<br>"; }
@@ -39,11 +40,14 @@
         /* SELECT 예제 */
         $sql = "SELECT * FROM keyword";
         $result = mysqli_query($conn, $sql);
+        // $row = mysqli_fetch_array($result);
         while($row = mysqli_fetch_array($result)){
-            echo $row['keyword']."<br>";
+            array_push($retlist, $row['keyword']."/".$row['cnt']);
+            // echo $row['keyword']."<br>";
         }
         
         mysqli_close($conn);
+        return $retlist;
     }
 
     // insert_keyword($keyword);

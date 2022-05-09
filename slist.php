@@ -16,17 +16,35 @@ include 'menu.php';
 
 ?>
 
-<div class="container-fluid">
+<div class="container">
   <h3>검색 리스트 쫙~</h3>
   <?php
     require 'db.php';
-    select_keyword();
-    //echo "Hello World";
-    // for($i=1; $i<=10; $i=$i+1)
-    // {
-    //   echo $i."검색어가 쫙~<br>";
-    // }
+    $retlist = select_keyword();
+    foreach($retlist as $key => $value) {
+        $sp = explode("/", $value);
+        echo " 검색어: ".$sp[0]." 검색횟수: ".$sp[1]."<br />";
+    }
+        
   ?>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>검색어</th>
+        <th>검색횟수</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>모기</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>방탄</td>
+        <td>5</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 </body>
