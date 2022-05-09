@@ -4,6 +4,7 @@
 require 'db.php';
 $keyword = $_POST["keyword"];
 insert_keyword($keyword);
-echo "지금까지 입력된 검색어<br>";
-select_keyword();
+// echo "지금까지 입력된 검색어<br>";
+// select_keyword();
+header("location: /slist.php");
 ?>

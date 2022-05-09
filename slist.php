@@ -18,15 +18,6 @@ include 'menu.php';
 
 <div class="container">
   <h3>검색 리스트 쫙~</h3>
-  <?php
-    require 'db.php';
-    $retlist = select_keyword();
-    foreach($retlist as $key => $value) {
-        $sp = explode("/", $value);
-        echo " 검색어: ".$sp[0]." 검색횟수: ".$sp[1]."<br />";
-    }
-        
-  ?>
   <table class="table table-hover">
     <thead>
       <tr>
@@ -35,14 +26,14 @@ include 'menu.php';
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>모기</td>
-        <td>1</td>
-      </tr>
-      <tr>
-        <td>방탄</td>
-        <td>5</td>
-      </tr>
+    <?php
+        require 'db.php';
+        $retlist = select_keyword();
+        foreach($retlist as $key => $value) {
+            $sp = explode("/", $value);
+            echo "<tr><td>".$sp[0]."</td><td>".$sp[1]."</td></tr>";
+        } 
+    ?>
     </tbody>
   </table>
 </div>
