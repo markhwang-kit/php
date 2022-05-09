@@ -20,9 +20,20 @@ include 'menu.php';
   <form class="form-inline" action="/action_page.php" method="post">
     <label for="keyword">검색어:</label>
     <input type="text" class="form-control" id="keyword" placeholder="검색어를 입력" name="keyword">
-    <button type="submit" class="btn btn-primary">검색</button>
+    <button type="submit" id="submit" class="btn btn-primary">검색</button>
   </form>
 </div>
 
 </body>
+<script>	 
+	$(document).ready(function(){  
+		$("#submit").click(function(){ 
+				if($("#keyword").val().length == 0) { 
+          alert("검색어를 입력하세요."); 
+          $("#keyword").focus(); 
+          return false; 
+        } 
+			});		 
+	}); 
+	</script> 
 </html>

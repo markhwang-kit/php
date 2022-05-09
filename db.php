@@ -33,8 +33,8 @@
     function select_keyword() {
         $conn = dbconn();  // db 연결
         /* DB 연결 확인 */
-        if($conn){ echo "Connection established"."<br>"; }
-        else{ die( 'Could not connect: ' . mysqli_error($conn) ); }
+        // if($conn){ echo "Connection established"."<br>"; }
+        // else{ die( 'Could not connect: ' . mysqli_error($conn) ); }
         
         /* SELECT 예제 */
         $sql = "SELECT * FROM keyword";
