@@ -17,14 +17,28 @@ include 'menu.php';
 
 <div class="container-fluid">
   <h3>검색하기</h3>
-  <form class="form-inline" action="/action_page.php" method="post">
+  <div class="form-inline">
     <label for="keyword">검색어:</label>
     <input type="text" class="form-control" id="keyword" placeholder="검색어를 입력" name="keyword">
     <button type="submit" id="submit" class="btn btn-primary">검색</button>
-  </form>
+</div>
+<br><br>
+<table class="table table-hover">
+  <thead>
+        <tr>
+          <th>검색어</th>
+          <th>검색횟수</th>
+        </tr>
+  </thead>
+  <tbody>
+
+  </tbody>
+</table>
+
 </div>
 
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>	 
 	$(document).ready(function(){  
 		$("#submit").click(function(){ 
@@ -33,6 +47,21 @@ include 'menu.php';
           $("#keyword").focus(); 
           return false; 
         } 
+        $.post("action_page.php",
+        {
+          keyword: $("#keyword").val()
+        },
+        function(data,status){
+          //alert("Data: " + data + "\nStatus: " + status);
+          // console.log(data[0]["keyword"]);
+          var html = "";
+          $.each(data, function(i, field){
+            // console.log(field["keyword"]);
+            html += "<tr><td>" + field["keyword"] + "</td><td>" + field["cnt"] + "</td></tr>";
+            // $("div").append(field + " ");
+          });
+          $("tbody").html(html);
+        });
 			});		 
 	}); 
 	</script> 
