@@ -30,6 +30,15 @@
         mysqli_close($conn);
     }
 
+    function delete_keyword($seq) {
+        $conn = dbconn();  // db 연결
+        $sql = "DELETE FROM keyword WHERE seq = $seq";
+        $result = mysqli_query($conn, $sql);
+        mysqli_close($conn);
+
+        return $result;
+    }
+
     function select_keyword() {
         $retlist = array();  // 디비에 리스트를 전달
         $conn = dbconn();  // db 연결
@@ -42,7 +51,7 @@
         $result = mysqli_query($conn, $sql);
         // $row = mysqli_fetch_array($result);
         while($row = mysqli_fetch_array($result)){
-            array_push($retlist, $row['keyword']."/".$row['cnt']);
+            array_push($retlist, $row['seq']."/".$row['keyword']."/".$row['cnt']);
             // echo $row['keyword']."<br>";
         }
         
