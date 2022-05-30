@@ -39,6 +39,15 @@
         return $result;
     }
 
+    function update_keyword($seq, $keyword) {
+        $conn = dbconn();  // db 연결
+        $sql = "UPDATE keyword SET keyword = '$keyword', cnt = 1 WHERE seq = $seq";
+        $result = mysqli_query($conn, $sql);
+        mysqli_close($conn);
+
+        return $result;
+    }
+
     function select_keyword() {
         $retlist = array();  // 디비에 리스트를 전달
         $conn = dbconn();  // db 연결

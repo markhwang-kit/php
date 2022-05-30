@@ -14,7 +14,12 @@
 
 <?php
 include 'menu.php';
-
+session_start();
+if(!isset($_SESSION['userid'])) {
+    echo "<script>location.replace('login.php');</script>";            
+} else {
+    $userid = $_SESSION['userid'];
+} 
 ?>
 
 <div class="container">
