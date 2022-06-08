@@ -19,10 +19,12 @@ if(!isset($_SESSION['userid'])) {
     echo "<script>location.replace('login.php');</script>";            
 } else {
     $userid = $_SESSION['userid'];
+    $username = $_SESSION['username'];
 } 
 ?>
 
 <div class="container">
+  <h3><?php echo $username; ?>님 반갑습니다.</h3>
   <h3>검색 리스트 쫙~</h3>
   <table class="table table-hover">
     <thead>

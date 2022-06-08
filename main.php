@@ -10,9 +10,14 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<script>
-  location.href="/controller.php?mode=main";
-</script>
+<?php
+include 'menu.php';
+?>
+
+<div class="container-fluid">
+  <h3>php 사이트</h3>
+<img src="https://jmagazine.joins.com/_data/photo/2016/05/2949993309_olERkGMq_01.jpg">  
+</div>
 
 </body>
 </html>
